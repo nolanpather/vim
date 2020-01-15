@@ -17,6 +17,7 @@ set showcmd
 set matchpairs+=<:>
 
 inoremap jk <esc>
+let mapleader=' '
 
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -30,6 +31,13 @@ augroup END
 
 " Plugin Configuration
 " --------------------
+
+" ale
+let g:ale_fixers = {
+  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \   'javascript': ['eslint'],
+  \   'typescript': ['eslint']
+  \}
 
 " gruvbox - dark theme
 colorscheme gruvbox 
@@ -46,3 +54,6 @@ let g:lightline = {
   \     'gitbranch': 'fugitive#head'
   \   },
   \ }
+
+" tsuquyomi
+autocmd filetype typescript nmap <buffer> <leader>t :<c-u>echo tsuquyomi#hint()<cr>

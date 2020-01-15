@@ -7,3 +7,12 @@
 [submodule "pack/plugins/start/vim-fugitive"]
 	path = pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/plugins/start/ale"]
+	path = pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale.git
+[submodule "pack/plugins/start/tsuquyomi"]
+	path = pack/plugins/start/tsuquyomi
+	url = https://github.com/Quramy/tsuquyomi.git
+[submodule "pack/plugins/start/typescript-vim"]
+	path = pack/plugins/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
