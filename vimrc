@@ -27,3 +27,15 @@ inoremap jk <esc>
 " gruvbox - dark theme
 colorscheme gruvbox 
 set background=dark
+
+" lightline - custom sections
+let g:lightline = {
+  \   'colorscheme': 'wombat',
+  \   'active': {
+  \     'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \   },
+  \   'component_function': {
+  \     'gitbranch': 'fugitive#head'
+  \   },
+  \ }
