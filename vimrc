@@ -19,11 +19,15 @@ set matchpairs+=<:>
 inoremap jk <esc>
 let mapleader=' '
 
+set directory=$HOME/.cache/.vim/swp//
+set backupdir=$HOME/.cache/.vim/backup//
+
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
+let g:netrw_dirhistmax=0
 augroup ProjectDrawer
   autocmd!
   autocmd VimEnter * :Vexplore
@@ -56,4 +60,6 @@ let g:lightline = {
   \ }
 
 " tsuquyomi
+autocmd filetype typescript nmap <buffer> <leader>e <plug>(TsuquyomiRenameSymbol)
+autocmd filetype typescript nmap <buffer> <leader>E <plug>(TsuquyomiRenameSymbolC)
 autocmd filetype typescript nmap <buffer> <leader>t :<c-u>echo tsuquyomi#hint()<cr>
