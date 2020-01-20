@@ -10,6 +10,7 @@ set softtabstop=2
 set expandtab
 
 set laststatus=2
+set showtabline=2
 
 set noshowmode
 set showcmd
@@ -43,19 +44,16 @@ let g:ale_fixers = {
 colorscheme gruvbox 
 set background=dark
 
-" lightline - custom sections
-let g:lightline = {
-  \   'colorscheme': 'wombat',
-  \   'active': {
-  \     'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-  \   },
-  \   'component_function': {
-  \     'gitbranch': 'fugitive#head'
-  \   },
-  \ }
-
 " tsuquyomi
 autocmd filetype typescript nmap <buffer> <leader>e <plug>(TsuquyomiRenameSymbol)
 autocmd filetype typescript nmap <buffer> <leader>E <plug>(TsuquyomiRenameSymbolC)
 autocmd filetype typescript nmap <buffer> <leader>t :<c-u>echo tsuquyomi#hint()<cr>
+
+" vim-flagship - add extensions
+function! AleStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? 'OK' : printf('%dW %dE', all_non_errors, all_errors)
+endfunction
+autocmd User Flags call Hoist("window", "%{AleStatus()}")
