@@ -25,3 +25,6 @@
 [submodule "pack/plugins/start/vim-flagship"]
 	path = pack/plugins/start/vim-flagship
 	url = https://github.com/tpope/vim-flagship.git
+[submodule "pack/plugins/start/nerdtree"]
+	path = pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
