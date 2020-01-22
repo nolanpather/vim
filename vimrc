@@ -34,7 +34,7 @@ let g:ale_fixers = {
   \}
 
 " gruvbox - dark theme
-colorscheme gruvbox 
+colorscheme gruvbox
 set background=dark
 
 " tsuquyomi
@@ -42,11 +42,3 @@ autocmd filetype typescript nmap <buffer> <leader>e <plug>(TsuquyomiRenameSymbol
 autocmd filetype typescript nmap <buffer> <leader>E <plug>(TsuquyomiRenameSymbolC)
 autocmd filetype typescript nmap <buffer> <leader>t :<c-u>echo tsuquyomi#hint()<cr>
 
-" vim-flagship - add extensions
-function! AleStatus() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? 'OK' : printf('%dW %dE', all_non_errors, all_errors)
-endfunction
-autocmd User Flags call Hoist("window", "%{AleStatus()}")
