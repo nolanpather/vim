@@ -28,3 +28,6 @@
 [submodule "pack/plugins/start/vim-airline"]
 	path = pack/plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
+[submodule "pack/plugins/start/vim-styled-components"]
+	path = pack/plugins/start/vim-styled-components
+	url = https://github.com/styled-components/vim-styled-components.git

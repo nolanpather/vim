@@ -32,6 +32,7 @@ let g:ale_fixers = {
   \   'javascript': ['eslint'],
   \   'typescript': ['eslint']
   \}
+let g:ale_fix_on_save = 1
 
 " gruvbox - dark theme
 colorscheme gruvbox
